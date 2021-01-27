@@ -1,0 +1,75 @@
+CREATE TABLE User
+(
+  Username VARCHAR NOT NULL,
+  PasswordHash VARCHAR NOT NULL,
+  Email VARCHAR NOT NULL,
+  FName VARCHAR NOT NULL,
+  LName VARCHAR NOT NULL,
+  IsAdmin BIT,
+  LastLogin DATE NOT NULL,
+  UserID SERIAL,
+  PRIMARY KEY (UserID),
+  UNIQUE (Username),
+  UNIQUE (Email)
+);
+
+CREATE TABLE Journal
+(
+  JournalID SERIAL,
+  Title VARCHAR NOT NULL,
+  Description VARCHAR,
+  UserID INT NOT NULL,
+  PRIMARY KEY (JournalID),
+  FOREIGN KEY (UserID) REFERENCES User(UserID)
+);
+
+CREATE TABLE SharedWith
+(
+  CanShare INT NOT NULL,
+  CanEdit INT NOT NULL,
+  UserID SERIAL,
+  JournalID SERIAL,
+  PRIMARY KEY (UserID, JournalID),
+  FOREIGN KEY (UserID) REFERENCES User(UserID),
+  FOREIGN KEY (JournalID) REFERENCES Journal(JournalID)
+);
+
+CREATE TABLE IsFriends
+(
+  UserID_1 SERIAL,
+  IsFriendsUserID_2 SERIAL,
+  PRIMARY KEY (UserID_1, IsFriendsUserID_2),
+  FOREIGN KEY (UserID_1) REFERENCES User(UserID),
+  FOREIGN KEY (IsFriendsUserID_2) REFERENCES User(UserID)
+);
+
+CREATE TABLE Entry
+(
+  EntryID SERIAL,
+  DateCreated DATE NOT NULL,
+  BodyText VARCHAR NOT NULL,
+  Location VARCHAR,
+  JournalID SERIAL,
+  PRIMARY KEY (EntryID, JournalID),
+  FOREIGN KEY (JournalID) REFERENCES Journal(JournalID)
+);
+
+CREATE TABLE Media
+(
+  ObjectID SERIAL,
+  Caption VARCHAR,
+  EntryID SERIAL,
+  JournalID SERIAL,
+  PRIMARY KEY (ObjectID, EntryID, JournalID),
+  FOREIGN KEY (EntryID, JournalID) REFERENCES Entry(EntryID, JournalID)
+);
+
+CREATE TABLE Tagged
+(
+  UserID SERIAL,
+  EntryID SERIAL,
+  JournalID SERIAL,
+  PRIMARY KEY (UserID, EntryID, JournalID),
+  FOREIGN KEY (UserID) REFERENCES User(UserID),
+  FOREIGN KEY (EntryID, JournalID) REFERENCES Entry(EntryID, JournalID)
+);
