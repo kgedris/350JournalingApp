@@ -1,3 +1,18 @@
+*Templates* 
+
+INSERT INTO table_name(column1, column2, …)
+VALUES (value1, value2, …); 
+
+DELETE FROM table_name
+WHERE condition;
+
+ALTER TABLE table_name 
+ADD COLUMN column_name datatype column_constraint;
+
+ROLLBACK;
+
+*Examples*
+
 INSERT INTO NewUser(
   Username,
   PasswordHash,
@@ -8,3 +23,10 @@ INSERT INTO NewUser(
   LastLogin,
   UserID)
 VALUES ('Wes', 'Hello', 'wes@wes.com', 'Westley', 'Holden', '1', '12/24/2020', 12345);
+
+
+
+DELETE FROM NewUser
+WHERE UserName = 'Wes';
+
+
