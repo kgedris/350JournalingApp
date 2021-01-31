@@ -1,4 +1,7 @@
-CREATE TABLE User
+--PostgreSQL 9.6
+--'\\' is a delimiter
+
+CREATE TABLE NewUser
 (
   Username VARCHAR NOT NULL,
   PasswordHash VARCHAR NOT NULL,
@@ -20,7 +23,7 @@ CREATE TABLE Journal
   Description VARCHAR,
   UserID INT NOT NULL,
   PRIMARY KEY (JournalID),
-  FOREIGN KEY (UserID) REFERENCES User(UserID)
+  FOREIGN KEY (UserID) REFERENCES NewUser(UserID)
 );
 
 CREATE TABLE SharedWith
@@ -30,7 +33,7 @@ CREATE TABLE SharedWith
   UserID SERIAL,
   JournalID SERIAL,
   PRIMARY KEY (UserID, JournalID),
-  FOREIGN KEY (UserID) REFERENCES User(UserID),
+  FOREIGN KEY (UserID) REFERENCES NewUser(UserID),
   FOREIGN KEY (JournalID) REFERENCES Journal(JournalID)
 );
 
@@ -39,8 +42,8 @@ CREATE TABLE IsFriends
   UserID_1 SERIAL,
   IsFriendsUserID_2 SERIAL,
   PRIMARY KEY (UserID_1, IsFriendsUserID_2),
-  FOREIGN KEY (UserID_1) REFERENCES User(UserID),
-  FOREIGN KEY (IsFriendsUserID_2) REFERENCES User(UserID)
+  FOREIGN KEY (UserID_1) REFERENCES NewUser(UserID),
+  FOREIGN KEY (IsFriendsUserID_2) REFERENCES NewUser(UserID)
 );
 
 CREATE TABLE Entry
@@ -70,6 +73,6 @@ CREATE TABLE Tagged
   EntryID SERIAL,
   JournalID SERIAL,
   PRIMARY KEY (UserID, EntryID, JournalID),
-  FOREIGN KEY (UserID) REFERENCES User(UserID),
+  FOREIGN KEY (UserID) REFERENCES NewUser(UserID),
   FOREIGN KEY (EntryID, JournalID) REFERENCES Entry(EntryID, JournalID)
 );
