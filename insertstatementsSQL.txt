@@ -1,0 +1,1 @@
+INSERT INTO entry VALUES (DEFAULT [id], '1-2-21' [date],'TEXT'[bodytext], DEFAULT [location], 4 [journalid]);
