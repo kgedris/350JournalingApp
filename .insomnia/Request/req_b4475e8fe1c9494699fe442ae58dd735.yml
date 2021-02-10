@@ -1,0 +1,33 @@
+_id: req_b4475e8fe1c9494699fe442ae58dd735
+type: Request
+parentId: wrk_2f6da46b646f4785b7cdd46fcfb499b6
+modified: 1612995105171
+created: 1612992917804
+url: http://192.168.50.63:8000/journal
+name: Create Journal
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    [
+    {
+    "title": "First Journal", 
+    "description": "my secound journal!", 
+    "userid": "3"
+    }
+    ]
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_67b0041186104d57b8f6865696034031
+authentication: {}
+metaSortKey: -1612992917883
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

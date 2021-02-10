@@ -1,0 +1,37 @@
+_id: req_877d912c752a4629871e4e3370096ef4
+type: Request
+parentId: wrk_2f6da46b646f4785b7cdd46fcfb499b6
+modified: 1612992440530
+created: 1612991898818
+url: http://192.168.50.63:8000/newuser
+name: Create User
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    [
+      {
+        "email": "player5@gmail.com",
+        "fname": "p5",
+        "lname": "smith",
+        "lastlogin": "2020-6-12",
+        "isadmin": "0",
+        "username": "player5",
+    		"passwordhash": "asdfasdf"
+      }
+    ]
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_da7c069aa8914a5b8019efef5156216c
+authentication: {}
+metaSortKey: -1612991898818
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,21 @@
+_id: req_1ad5d2269b21426db91eedcd7c32db8f
+type: Request
+parentId: wrk_2f6da46b646f4785b7cdd46fcfb499b6
+modified: 1612995141859
+created: 1612994854094
+url: http://192.168.50.63:8000/user_journal?userid=eq.3&journalid=eq.4
+name: Get Journal By User
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1612994854094
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,32 @@
+_id: req_654e27985ba84acc977d45848926e50a
+type: Request
+parentId: wrk_2f6da46b646f4785b7cdd46fcfb499b6
+modified: 1612995490560
+created: 1612995466925
+url: http://192.168.50.63:8000/isfriends
+name: Create New Friend
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    [
+      {
+        "userid_1": 3,
+        "isfriendsuserid_2": 5
+      }
+    ]
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_2190832e73f340f09ca80467c5bcb093
+authentication: {}
+metaSortKey: -1612995055799
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

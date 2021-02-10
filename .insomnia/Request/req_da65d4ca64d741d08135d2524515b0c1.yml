@@ -1,0 +1,25 @@
+_id: req_da65d4ca64d741d08135d2524515b0c1
+type: Request
+parentId: wrk_2f6da46b646f4785b7cdd46fcfb499b6
+modified: 1612994778710
+created: 1612994470321
+url: http://192.168.50.63:8000/landing_page?userid=eq.2
+name: Landing page
+description: ""
+method: GET
+body: {}
+parameters:
+  - name: ""
+    value: ""
+    description: ""
+    id: pair_9856aee70ee24442b51814ce22be121c
+headers: []
+authentication: {}
+metaSortKey: -1612994470321
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,21 @@
+_id: req_4d416c82845b479cab822a748ff8c610
+type: Request
+parentId: wrk_2f6da46b646f4785b7cdd46fcfb499b6
+modified: 1612993746256
+created: 1612993606956
+url: http://192.168.50.63:8000/entry
+name: Get Entry
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1612993606957
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

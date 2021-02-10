@@ -1,0 +1,30 @@
+_id: req_bef392288b17498690d51280eb9151e9
+type: Request
+parentId: wrk_2f6da46b646f4785b7cdd46fcfb499b6
+modified: 1612993635951
+created: 1612992514782
+url: http://192.168.50.63:8000/journal
+name: Get Journal
+description: ""
+method: GET
+body:
+  mimeType: application/json
+  text: |
+    JournalID, 
+    Title, 
+    Description, 
+    DEFAULT [UserID]
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_3d3a33356c564a82979d8a643498a81b
+authentication: {}
+metaSortKey: -1612992514782
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

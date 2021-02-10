@@ -1,0 +1,21 @@
+_id: req_2f06a0714f7149e1b25effbdf41a617f
+type: Request
+parentId: wrk_2f6da46b646f4785b7cdd46fcfb499b6
+modified: 1612991812523
+created: 1612991808608
+url: http://192.168.50.63:8000/user_profile
+name: User Profile
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1612991808608
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

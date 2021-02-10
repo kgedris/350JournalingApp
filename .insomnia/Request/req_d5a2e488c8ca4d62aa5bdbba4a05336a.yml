@@ -1,0 +1,30 @@
+_id: req_d5a2e488c8ca4d62aa5bdbba4a05336a
+type: Request
+parentId: wrk_2f6da46b646f4785b7cdd46fcfb499b6
+modified: 1612994725331
+created: 1612994015004
+url: http://192.168.50.63:8000/journal_entry?journalid=eq.2
+name: Get Entry By Journal
+description: ""
+method: GET
+body:
+  mimeType: application/json
+  text: ""
+parameters:
+  - name: ""
+    value: ""
+    description: ""
+    id: pair_f4ed44c5a8b543e99edf1e6191c8139b
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_682c105256894001b3f1538adf66316e
+authentication: {}
+metaSortKey: -1612994015004
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

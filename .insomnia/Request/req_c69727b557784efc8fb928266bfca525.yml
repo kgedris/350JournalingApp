@@ -1,0 +1,33 @@
+_id: req_c69727b557784efc8fb928266bfca525
+type: Request
+parentId: wrk_2f6da46b646f4785b7cdd46fcfb499b6
+modified: 1612993855041
+created: 1612993597120
+url: http://192.168.50.63:8000/entry
+name: Create Entry
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    [
+      {
+        "datecreated": "2021-01-01",
+        "bodytext": "my favorite entry",
+        "journalid": 2
+      }
+    ]
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_77af7cec54e1486e95aca0c997c6f06d
+authentication: {}
+metaSortKey: -1612993597209
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

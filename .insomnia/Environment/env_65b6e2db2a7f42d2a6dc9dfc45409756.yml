@@ -1,0 +1,11 @@
+_id: env_65b6e2db2a7f42d2a6dc9dfc45409756
+type: Environment
+parentId: env_ac46c4f90e576fa2ad615e1ddf9c8fe97743918e
+modified: 1612996351209
+created: 1612994501200
+name: Journal Environment
+data: {}
+dataPropertyOrder: null
+color: null
+isPrivate: false
+metaSortKey: 1612994501201

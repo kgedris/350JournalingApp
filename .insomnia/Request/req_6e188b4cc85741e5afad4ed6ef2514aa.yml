@@ -1,0 +1,21 @@
+_id: req_6e188b4cc85741e5afad4ed6ef2514aa
+type: Request
+parentId: wrk_2f6da46b646f4785b7cdd46fcfb499b6
+modified: 1612995515461
+created: 1612995257504
+url: http://192.168.50.63:8000/isfriends
+name: Friend Relationships
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1612995257504
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

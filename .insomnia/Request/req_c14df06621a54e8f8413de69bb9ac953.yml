@@ -1,0 +1,21 @@
+_id: req_c14df06621a54e8f8413de69bb9ac953
+type: Request
+parentId: wrk_2f6da46b646f4785b7cdd46fcfb499b6
+modified: 1612995565952
+created: 1612995538322
+url: http://192.168.50.63:8000/isfriends?userid_1=eq.2
+name: Get friendslist by User
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1612995156651.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
