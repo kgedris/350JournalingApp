@@ -1,5 +1,6 @@
 ----List of a user's friends:
-CREATE VIEW friends_list AS SELECT IsFriendsUserID_2, UserID_1 FROM IsFriends; 
+CREATE VIEW friends_list AS SELECT isfriends.UserId_1, isfriends.IsFriendsUserID_2, newuser.Fname, newuser.Lname FROM isfriends
+JOIN newuser on isfriends.IsFriendsUserId_2 = newuser.UserId;
 
 ----Information for the landing page (will include buttons that call other views)
 CREATE VIEW landing_page AS SELECT LastLogin, Fname, UserID FROM NewUser; 
