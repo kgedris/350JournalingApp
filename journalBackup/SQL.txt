@@ -14,7 +14,8 @@ CREATE TABLE NewUser
   PRIMARY KEY (UserID),
   UNIQUE (Username),
   UNIQUE (Email)
-);
+)
+ON DELETE CASCADE);
 
 CREATE TABLE Journal
 (
@@ -24,7 +25,8 @@ CREATE TABLE Journal
   UserID INT NOT NULL,
   PRIMARY KEY (JournalID),
   FOREIGN KEY (UserID) REFERENCES NewUser(UserID)
-);
+)
+ON DELETE CASCADE);
 
 CREATE TABLE SharedWith
 (
@@ -35,7 +37,8 @@ CREATE TABLE SharedWith
   PRIMARY KEY (UserID, JournalID),
   FOREIGN KEY (UserID) REFERENCES NewUser(UserID),
   FOREIGN KEY (JournalID) REFERENCES Journal(JournalID)
-);
+)
+ON DELETE CASCADE);
 
 CREATE TABLE IsFriends
 (
@@ -44,7 +47,8 @@ CREATE TABLE IsFriends
   PRIMARY KEY (UserID_1, IsFriendsUserID_2),
   FOREIGN KEY (UserID_1) REFERENCES NewUser(UserID),
   FOREIGN KEY (IsFriendsUserID_2) REFERENCES NewUser(UserID)
-);
+)
+ON DELETE CASCADE);
 
 CREATE TABLE Entry
 (
@@ -55,7 +59,8 @@ CREATE TABLE Entry
   JournalID SERIAL,
   PRIMARY KEY (EntryID, JournalID),
   FOREIGN KEY (JournalID) REFERENCES Journal(JournalID)
-);
+)
+ON DELETE CASCADE);
 
 CREATE TABLE Media
 (
@@ -65,7 +70,8 @@ CREATE TABLE Media
   JournalID SERIAL,
   PRIMARY KEY (ObjectID, EntryID, JournalID),
   FOREIGN KEY (EntryID, JournalID) REFERENCES Entry(EntryID, JournalID)
-);
+)
+ON DELETE CASCADE);
 
 CREATE TABLE Tagged
 (
@@ -75,4 +81,5 @@ CREATE TABLE Tagged
   PRIMARY KEY (UserID, EntryID, JournalID),
   FOREIGN KEY (UserID) REFERENCES NewUser(UserID),
   FOREIGN KEY (EntryID, JournalID) REFERENCES Entry(EntryID, JournalID)
-);
+)
+ON DELETE CASCADE);
