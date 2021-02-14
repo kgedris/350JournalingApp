@@ -1,0 +1,61 @@
+CREATE OR REPLACE FUNCTION last_login_update()  
+
+RETURNS TRIGGER AS $$ BEGIN 
+
+NEW.lastlogin = NOW(); 
+
+RETURN NEW; END; $$ LANGUAGE plpgsql;
+
+
+
+CREATE TRIGGER LastLoginUpdate 
+
+    AFTER UPDATE ON newuser.LastLogin 
+
+    FOR EACH ROW 
+
+    WHEN (OLD.* IS DISTINCT FROM NEW.*) 
+
+    EXECUTE PROCEDURE last_login_update(); 
+    
+
+CREATE TRIGGER removeFriend 
+
+    BEFORE UPDATE ON friendList 
+
+    FOR EACH ROW 
+
+    REASSIGN OWNED BY newUser TO friendList.id; 
+
+    DROP OWNED BY newUser; 
+
+    -- repeat the above commands in each database of the cluster 
+
+    DROP ROLE newUser; 
+    
+
+CREATE TRIGGER removeUser 
+
+    BEFORE DELETE ON newUser 
+
+    FOR EACH ROW 
+
+    DELETE journal; 
+    
+    
+CREATE TRIGGER removeEntireJournal 
+
+    BEFORE DELETE ON JOURNAL 
+
+    FOR EACH ROW 
+
+   DELETE journalEntry; 
+   
+
+CREATE TRIGGER removeJournalEntry 
+
+    BEFORE DELETE ON journalEntry 
+
+    FOR EACH ROW 
+
+    DELETE media; 
