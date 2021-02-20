@@ -1,0 +1,111 @@
+ALTER TABLE entry  
+
+DROP CONSTRAINT entry_journalid_fkey, 
+
+ADD CONSTRAINT entry_journalid_fkey FOREIGN KEY (journalid) 
+
+        REFERENCES public.journal (journalid) MATCH SIMPLE 
+
+        ON UPDATE NO ACTION 
+
+        ON DELETE CASCADE 
+
+ 
+
+ALTER TABLE isFriends 
+
+DROP CONSTRAINT isfriends_isfriendsuserid_2_fkey, 
+
+ADD CONSTRAINT isfriends_isfriendsuserid_2_fkey FOREIGN KEY (isfriendsuserid_2) 
+
+        REFERENCES public.newuser (userid) MATCH SIMPLE 
+
+        ON UPDATE NO ACTION 
+
+        ON DELETE CASCADE, 
+
+DROP CONSTRAINT isfriends_userid_1_fkey, 
+
+  ADD CONSTRAINT isfriends_userid_1_fkey FOREIGN KEY (userid_1) 
+
+        REFERENCES public.newuser (userid) MATCH SIMPLE 
+
+        ON UPDATE NO ACTION 
+
+        ON DELETE CASCADE 
+
+ 
+
+ALTER TABLE journal 
+
+DROP CONSTRAINT journal_userid_fkey, 
+
+ADD CONSTRAINT journal_userid_fkey FOREIGN KEY (userid) 
+
+        REFERENCES public.newuser (userid) MATCH SIMPLE 
+
+        ON UPDATE NO ACTION 
+
+        ON DELETE CASCADE 
+
+ 
+
+ALTER TABLE media 
+
+DROP CONSTRAINT media_entryid_fkey, 
+
+ADD CONSTRAINT media_entryid_fkey FOREIGN KEY (entryid, journalid) 
+
+        REFERENCES public.entry (entryid, journalid) MATCH SIMPLE 
+
+        ON UPDATE NO ACTION 
+
+        ON DELETE CASCADE 
+
+ 
+
+ALTER TABLE sharedwith 
+
+DROP CONSTRAINT sharedwith_journalid_fkey, 
+
+ADD CONSTRAINT sharedwith_journalid_fkey FOREIGN KEY (journalid) 
+
+        REFERENCES public.journal (journalid) MATCH SIMPLE 
+
+        ON UPDATE NO ACTION 
+
+        ON DELETE CASCADE, 
+
+DROP CONSTRAINT sharedwith_userid_fkey, 
+
+ADD  CONSTRAINT sharedwith_userid_fkey FOREIGN KEY (userid) 
+
+        REFERENCES public.newuser (userid) MATCH SIMPLE 
+
+        ON UPDATE NO ACTION 
+
+        ON DELETE CASCADE 
+
+ 
+
+ALTER TABLE tagged 
+
+DROP CONSTRAINT tagged_entryid_fkey, 
+
+ADD CONSTRAINT tagged_entryid_fkey FOREIGN KEY (entryid, journalid) 
+
+        REFERENCES public.entry (entryid, journalid) MATCH SIMPLE 
+
+        ON UPDATE NO ACTION 
+
+        ON DELETE CASCADE, 
+
+DROP CONSTRAINT tagged_userid_fkey, 
+
+ADD  CONSTRAINT tagged_userid_fkey FOREIGN KEY (userid) 
+
+        REFERENCES public.newuser (userid) MATCH SIMPLE 
+
+        ON UPDATE NO ACTION 
+
+        ON DELETE CASCADE 
